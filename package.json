@@ -6,13 +6,6 @@
   "scripts": {
     "test": "npx cypress open"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/leonardoluz1020/GlassCursoEmVideoCypressTest.git"
-  },
-  "keywords": [
-    "CORSAana14@"
-  ],
   "author": "Leonardo Luz",
   "license": "ISC",
   "bugs": {

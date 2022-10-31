@@ -1,0 +1,25 @@
+{
+  "name": "projeto-glassguanabara",
+  "version": "1.0.0",
+  "description": "projeto-glassguanabara",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/leonardoluz1020/GlassCursoEmVideoCypressTest.git"
+  },
+  "keywords": [
+    "CORSAana14@"
+  ],
+  "author": "Leonardo Luz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leonardoluz1020/GlassCursoEmVideoCypressTest/issues"
+  },
+  "homepage": "https://github.com/leonardoluz1020/GlassCursoEmVideoCypressTest#readme",
+  "devDependencies": {
+    "cypress": "^10.11.0"
+  }
+}

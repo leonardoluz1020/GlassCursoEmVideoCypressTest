@@ -41,4 +41,8 @@ describe('Teste de interface na pagina inicial do google glass', () => {
         cy.get('#rodape > p').should('be.visible')
         cy.contains('#rodape', 'Copyright © 2021 - by Leonardo Oliveira Da Luz').should('be.visible')
     })
+    it('Verificando videos da tela inicial',()=>{
+        cy.get('#filme-corpo').should('be.visible').click()
+        cy.get('#filme').should('be.visible').click()
+    })
 })

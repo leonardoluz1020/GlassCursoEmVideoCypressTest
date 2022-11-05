@@ -1,11 +1,12 @@
 describe('Teste de interface na pagina inicial do google glass', () => {
+    const href = ['google-glass.html#tela', 'google-glass.html#camera', 'google-glass.html#gadgets', 'google-glass.html#sensores']
     beforeEach(() => {
         cy.visit('../../../src/index.html')
     })
     it('Verificando Titulo da Pagina', () => {
         cy.title().should('be.equal', 'Tudo sobre Google Glass');
     })
-    it('Verificando links da pagina ', () => {        
+    it('Verificando links da pagina ', () => {
         cy.contains('a', 'Project Glass').should('have.attr', 'target', '_blank').invoke('removeAttr', 'target')
         cy.contains('a', 'Home').should('be.visible').click()
         cy.contains('a', 'Especificações').should('be.visible').click()
@@ -45,11 +46,11 @@ describe('Teste de interface na pagina inicial do google glass', () => {
         cy.get('#rodape > p').should('be.visible')
         cy.contains('#rodape', 'Copyright © 2021 - by Leonardo Oliveira Da Luz').should('be.visible')
     })
-    it('Verificando videos da tela inicial',()=>{
+    it('Verificando videos da tela inicial', () => {
         cy.get('#filme-corpo').should('be.visible').click()
         cy.get('#filme').should('be.visible').click()
     })
-    it.only('Verificando tela de Especificações',()=>{
+    it('Verificando links da tela de Especificações', () => {
         cy.contains('a', 'Especificações').should('be.visible').click()
         cy.contains('a', 'Fotos').should('be.visible').click()
         cy.contains('a', 'Especificações').should('be.visible').click()
@@ -59,5 +60,13 @@ describe('Teste de interface na pagina inicial do google glass', () => {
         cy.contains('a', 'Especificações').should('be.visible').click()
         cy.contains('a', 'Facebook').should('have.attr', 'target', '_blank').invoke('removeAttr', 'target')
         cy.contains('a', ' Twitter').should('have.attr', 'target', '_blank').invoke('removeAttr', 'target')
+    })
+    it.only('Verificando posicionamento de click do oculos glass', () => {
+        cy.contains('a', 'Especificações').should('be.visible').click()
+        cy.get('area').then(($area) => {
+            for (let i = 0; i < $area.length; i++) {
+                cy.wrap($area[i]).should('have.attr', 'href', href[i])
+            }
+        })
     })
 })

@@ -61,12 +61,20 @@ describe('Teste de interface na pagina inicial do google glass', () => {
         cy.contains('a', 'Facebook').should('have.attr', 'target', '_blank').invoke('removeAttr', 'target')
         cy.contains('a', ' Twitter').should('have.attr', 'target', '_blank').invoke('removeAttr', 'target')
     })
-    it.only('Verificando posicionamento de click do oculos glass', () => {
+    it('Verificando posicionamento de click do oculos glass', () => {
         cy.contains('a', 'Especificações').should('be.visible').click()
         cy.get('area').then(($area) => {
             for (let i = 0; i < $area.length; i++) {
                 cy.wrap($area[i]).should('have.attr', 'href', href[i])
             }
         })
+    })
+    it.only('Verificando link de fotos', () =>{
+        cy.contains('a', 'Fotos').should('be.visible').click()
+        cy.contains('a', 'Multimídia').should('be.visible').click()
+        cy.contains('a', 'Fotos').should('be.visible').click()
+        cy.contains('a', 'Fale conosco').should('be.visible').click()
+        cy.contains('a', 'Fotos').should('be.visible').click()
+        cy.contains('a', 'Home').should('be.visible').click()
     })
 })

@@ -69,13 +69,15 @@ describe('Teste de interface na pagina inicial do google glass', () => {
             }
         })
     })
-    it('Verificando link de fotos', () =>{
+    it('Verificando links de fotos', () =>{
         cy.contains('a', 'Fotos').should('be.visible').click()
         cy.contains('a', 'Multimídia').should('be.visible').click()
         cy.contains('a', 'Fotos').should('be.visible').click()
         cy.contains('a', 'Fale conosco').should('be.visible').click()
         cy.contains('a', 'Fotos').should('be.visible').click()
         cy.contains('a', 'Home').should('be.visible').click()
+        cy.contains('a', 'Especificações').should('be.visible').click()
+        cy.contains('a', 'Fotos').should('be.visible').click()
     })
     it('Verificando descrições da pagina de Fotos',() => {
         cy.contains('a', 'Fotos').should('be.visible').click()
@@ -91,5 +93,14 @@ describe('Teste de interface na pagina inicial do google glass', () => {
         cy.get('#foto06').should('be.visible')
         cy.get('ul#album-fotos').as('todos')
         cy.get('@todos')
+    })
+    it('Verificando links de multimídia',() => {
+        cy.contains('a', 'Multimídia').should('be.visible').click()
+        cy.contains('a', 'Fale conosco').should('be.visible').click()
+        cy.contains('a', 'Multimídia').should('be.visible').click()
+        cy.contains('a', 'Home').should('be.visible').click()
+        cy.contains('a', 'Multimídia').should('be.visible').click()
+        cy.contains('a', 'Especificações').should('be.visible').click()
+        cy.contains('a', 'Multimídia').should('be.visible').click()
     })
 })

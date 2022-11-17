@@ -75,6 +75,11 @@ describe('Teste de interface na pagina inicial do google glass', () => {
             }
         })
     })
+    it('Verificando rodapé da tela especificações', () => {
+        cy.contains('a', 'Especificações').should('be.visible').click()
+        cy.get('#rodape > p').should('be.visible')
+        cy.contains('#rodape','Copyright © 2021 - by Leonardo Oliveira').should('be.visible')
+    })
     it('Verificando links da tela de fotos', () =>{
         cy.contains('a', 'Fotos').should('be.visible').click()
         cy.contains('a', 'Multimídia').should('be.visible').click()
@@ -117,7 +122,7 @@ describe('Teste de interface na pagina inicial do google glass', () => {
         cy.contains('h2','por Gustavo Guanabara').should('be.visible')
         cy.contains('h3','Glass > Multimídia').should('be.visible')
     })
-    it('Verificando mídias',() => {
+    it('Verificando mídias de tela de multimídia',() => {
         cy.contains('a', 'Multimídia').should('be.visible').click()
         cy.get('audio').should('be.visible').click()
         cy.get('video').should('be.visible').click()

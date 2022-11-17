@@ -103,4 +103,9 @@ describe('Teste de interface na pagina inicial do google glass', () => {
         cy.contains('a', 'Especificações').should('be.visible').click()
         cy.contains('a', 'Multimídia').should('be.visible').click()
     })
+    it.only('Verificando mídias',() => {
+        cy.contains('a', 'Multimídia').should('be.visible').click()
+        cy.get('audio').should('be.visible').click()
+        cy.get('video').should('be.visible').click()
+    })
 })

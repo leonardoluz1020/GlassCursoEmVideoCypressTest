@@ -107,7 +107,7 @@ describe('Teste de interface na pagina inicial do google glass', () => {
         cy.get('ul#album-fotos').as('todos')
         cy.get('@todos')
     })
-    it.only('Verificando rodapé da tela de fotos', () => {
+    it('Verificando rodapé da tela de fotos', () => {
         cy.contains('a', 'Fotos').should('be.visible').click()
         cy.get('#rodape > p').should('be.visible')
         cy.contains('#rodape','Copyright © 2021 - by Leonardo Oliveira').should('be.visible')
@@ -131,5 +131,10 @@ describe('Teste de interface na pagina inicial do google glass', () => {
         cy.contains('a', 'Multimídia').should('be.visible').click()
         cy.get('audio').should('be.visible').click()
         cy.get('video').should('be.visible').click()
+    })
+    it('Verificando rodapé da tela de multimídia', () => {
+        cy.contains('a', 'Multimídia').should('be.visible').click()
+        cy.get('#rodape > p').should('be.visible')
+        cy.contains('#rodape','Copyright © 2021 - by Leonardo Oliveira').should('be.visible')
     })
 })

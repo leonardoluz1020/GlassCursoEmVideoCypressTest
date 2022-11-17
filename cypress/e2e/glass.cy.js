@@ -61,6 +61,12 @@ describe('Teste de interface na pagina inicial do google glass', () => {
         cy.contains('a', 'Facebook').should('have.attr', 'target', '_blank').invoke('removeAttr', 'target')
         cy.contains('a', ' Twitter').should('have.attr', 'target', '_blank').invoke('removeAttr', 'target')
     })
+    it.only('Verificar descrições da pagina de especificações', () => {
+        cy.contains('a', 'Especificações').should('be.visible').click()
+        cy.contains('h1','Raio-X no Google Glass').should('be.visible')
+        cy.contains('h2','por Gustavo Guanabara').should('be.visible')
+        cy.contains('h3','Glass > Especificações').should('be.visible')
+    })
     it('Verificando posicionamento de click do oculos glass', () => {
         cy.contains('a', 'Especificações').should('be.visible').click()
         cy.get('area').then(($area) => {
@@ -82,6 +88,8 @@ describe('Teste de interface na pagina inicial do google glass', () => {
     it('Verificando descrições da pagina de Fotos',() => {
         cy.contains('a', 'Fotos').should('be.visible').click()
         cy.contains('h1','Galeria de Imagens do Google Glass').should('be.visible')
+        cy.contains('h2','por Gustavo Guanabara').should('be.visible')
+        cy.contains('h3','Glass > Fotos').should('be.visible')
     })
     it('Verificado fotos da galeria',() => {
         cy.contains('a', 'Fotos').should('be.visible').click()
@@ -103,7 +111,7 @@ describe('Teste de interface na pagina inicial do google glass', () => {
         cy.contains('a', 'Especificações').should('be.visible').click()
         cy.contains('a', 'Multimídia').should('be.visible').click()
     })
-    it.only('Verificando mídias',() => {
+    it('Verificando mídias',() => {
         cy.contains('a', 'Multimídia').should('be.visible').click()
         cy.get('audio').should('be.visible').click()
         cy.get('video').should('be.visible').click()

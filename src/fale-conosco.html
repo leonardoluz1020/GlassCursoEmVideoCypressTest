@@ -48,19 +48,19 @@
 
                  <form method="post" id="fContato" action="mailto:leonardoluz10@hotmail.com" oninput="calc_total();"> 
                      <fieldset id="usuario"><legend>Identificação do Usuário</legend>
-                                                     <p><label for="cNome"> Nome: </label><input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo"></p>
-                                                     <p><label for="cSenha"> Senha: </label><input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 Digitos"></p>
-                                                     <p><label for="cMail"> E-mail: </label><input type="email" name="tMail" id="cMail" size="20" maxlength="40"></p> 
+                                                     <p><label for="cNome"> Nome: </label><input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo" required></p>
+                                                     <p><label for="cSenha"> Senha: </label><input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 Digitos" required></p>
+                                                     <p><label for="cMail"> E-mail: </label><input type="email" name="tMail" id="cMail" size="20" maxlength="40" required></p> 
                                                      <fieldset id="sexo"><legend>Sexo: </legend> 
                                                                                  <input type="radio" name="tSexo" id="cMasc"/><label for="cMasc" checked> Masculino</label><br> 
                                                                                  <input type="radio" name="tSexo" id="cFem"/><label for="cFem"> Feminino</label> 
                                                     </fieldset>
-                                                    <p><label for="cNasc"> Data de Nascimento: </label><input type="date" name="tNasc" id="cNasc"></p> 
+                                                    <p><label for="cNasc"> Data de Nascimento: </label><input type="date" name="tNasc" id="cNasc" required></p> 
                      </fieldset>
                      <fieldset id="endereco"><legend>Endereço do Usuário</legend>
-                                                 <p><label for="cRua">Logradouro: </label><input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua, Av, Trav,..."></p>
-                                                 <p><label for="cNum">Número: </label><input type="number" name="tNum" id="cNum" min="0" max="99999" ></p>
-                                                 <p><label for="cEst">Estado: </label><select name="tEst" id="cEst">
+                                                 <p><label for="cRua">Logradouro: </label><input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua, Av, Trav,..." required></p>
+                                                 <p><label for="cNum">Número: </label><input type="number" name="tNum" id="cNum" min="0" max="99999" required></p>
+                                                 <p><label for="cEst">Estado: </label><select name="tEst" id="cEst" required>
                                                  <optgroup label="Região Sudeste"><option value="RJ">Rio de Janeiro</option>
                                                      <option value="SP" selected>São Paulo</option>
                                                      <option value="MG">Minas Gerais</option>
@@ -87,7 +87,7 @@
                                                  <p><label for="cUrg">Grau de Urgência:  Min</label>
                                                  <input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2">Máx</p>
                                                  <p><label for="cMsg">Mensagem: </label>
-                                                 <textarea name="tMsg" id="cMsg" placeholder="Escreva aqui sua mensagem" cols="35" rows="5"></textarea></p> 
+                                                 <textarea name="tMsg" id="cMsg" placeholder="Escreva aqui sua mensagem" cols="35" rows="5" required></textarea></p> 
                      </fieldset>
                      <fieldset id="pedido"><legend>Quero um Google Glass</legend>
                                                  <p><input type="checkbox" name="tPed" id="cPed" checked>

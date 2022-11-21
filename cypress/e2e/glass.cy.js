@@ -120,6 +120,7 @@ describe('Teste de interface na pagina inicial do google glass', () => {
         cy.contains('a', 'Multimídia').should('be.visible').click()
         cy.contains('a', 'Especificações').should('be.visible').click()
         cy.contains('a', 'Multimídia').should('be.visible').click()
+        cy.contains('a', 'Fotos').should('be.visible').click()
     })
     it('Verificando descrições de tela de multimídia',() => {
         cy.contains('a', 'Multimídia').should('be.visible').click()
@@ -136,5 +137,14 @@ describe('Teste de interface na pagina inicial do google glass', () => {
         cy.contains('a', 'Multimídia').should('be.visible').click()
         cy.get('#rodape > p').should('be.visible')
         cy.contains('#rodape','Copyright © 2021 - by Leonardo Oliveira').should('be.visible')
+    })
+    it('Verificar links de fale conosco', ()=>{
+        cy.contains('a', 'Fale conosco').should('be.visible').click()
+        cy.contains('a', 'Home').should('be.visible').click()
+        cy.contains('a', 'Fale conosco').should('be.visible').click()
+        cy.contains('a', 'Especificações').should('be.visible').click()
+        cy.contains('a', 'Fale conosco').should('be.visible').click()
+        cy.contains('a', 'Fotos').should('be.visible').click()
+        cy.contains('a', 'Fale conosco').should('be.visible').click()
     })
 })

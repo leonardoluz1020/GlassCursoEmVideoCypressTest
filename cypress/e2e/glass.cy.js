@@ -146,5 +146,11 @@ describe('Teste de interface na pagina inicial do google glass', () => {
         cy.contains('a', 'Fale conosco').should('be.visible').click()
         cy.contains('a', 'Fotos').should('be.visible').click()
         cy.contains('a', 'Fale conosco').should('be.visible').click()
+    })    
+    it.only('Verificando descrições de tela de fale conosco',() => {
+        cy.contains('a', 'Fale conosco').should('be.visible').click()
+        cy.contains('h1','Formulário de Contato').should('be.visible')
+        cy.contains('h2','por Gustavo Guanabara').should('be.visible')
+        cy.contains('h3','Fale Conosco > Contato').should('be.visible')
     })
 })

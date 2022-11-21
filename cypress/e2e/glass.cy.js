@@ -147,10 +147,41 @@ describe('Teste de interface na pagina inicial do google glass', () => {
         cy.contains('a', 'Fotos').should('be.visible').click()
         cy.contains('a', 'Fale conosco').should('be.visible').click()
     })    
-    it.only('Verificando descrições de tela de fale conosco',() => {
+    it('Verificando descrições de tela de fale conosco',() => {
         cy.contains('a', 'Fale conosco').should('be.visible').click()
         cy.contains('h1','Formulário de Contato').should('be.visible')
         cy.contains('h2','por Gustavo Guanabara').should('be.visible')
         cy.contains('h3','Fale Conosco > Contato').should('be.visible')
+    })
+    it('Verificando rodapé da tela de fale conosco', () => {
+        cy.contains('a', 'Fale conosco').should('be.visible').click()
+        cy.get('#rodape > p').should('be.visible')
+        cy.contains('#rodape','Copyright © 2021 - by Leonardo Oliveira').should('be.visible')
+    })
+    it('Preenchendo formulario', ()=> {
+        const testLong = 'Precisamos aprender Cypress URGENTE para entrarmos na area de analista de teste automatizado Precisamos aprender Cypress URGENTE para entrarmos na area de analista de teste automatizado Precisamos aprender Cypress URGENTE para entrarmos na area de analista de teste automatizado Precisamos aprender Cypress URGENTE para entrarmos na area de analista de teste automatizado'; // variavel com texto
+        cy.contains('a', 'Fale conosco').should('be.visible').click()
+        cy.get('#cNome').should('be.visible').type('Leonardo Oliveira Luz').should('have.value','Leonardo Oliveira Luz')
+        cy.get('#cSenha').should('be.visible').type('12345678').should('have.value','12345678')
+        cy.get('#cMail').should('be.visible').type('leo@hotmail.com').should('have.value','leo@hotmail.com')
+        cy.get('#cMasc').should('be.visible').check().should('be.checked')
+        cy.get('#cFem').should('be.visible').check().should('be.checked')
+        cy.get('#cNasc').should('be.visible').type('1986-03-11').should('have.value','1986-03-11')
+        cy.get('#cRua').should('be.visible').type('Rua da vitoria e conquistas').should('have.value','Rua da vitoria e conquistas')
+        cy.get('#cNum').should('be.visible').type('36').should('have.value','36')   
+        cy.get('#cEst').select('SP').should('have.value', 'SP')
+        cy.get('#cCid').should('be.visible').type('São Paulo').should('have.value','São Paulo')
+        cy.get('#cUrg').should('be.visible').type('10').should('have.value','10')
+        cy.get('#cMsg').should('be.visible').type(testLong, {delay:0}).should('have.value',testLong)
+        cy.get('#cPed').uncheck().should('not.be.checked')
+        cy.get('#cPed').check().should('be.checked')
+        cy.get('#cCor').type('#000000').should('have.value','#000000')
+        cy.get('#cQtd').type(3).should('have.value','3')
+        cy.get('#cTot').should('have.value','4500')
+        //cy.contains('input[type="image"]','tEnviar')
+        //cy.get('input[type="image"]').should('have.attr', 'href', '_imagens/botao-enviar.png')
+ 
+
+
     })
 })
